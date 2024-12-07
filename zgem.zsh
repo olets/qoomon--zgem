@@ -297,6 +297,7 @@ function __zgem::download::git {
     git clone \
       ${(Q)=${repo_branch:+"--branch '$repo_branch'"}} \
       --single-branch  "$repo_url" "$clone_dir" \
+      --recurse-submodules \
       --depth 1 \
     && mv "$clone_dir/"*(DN) . \
     && rmdir "$clone_dir" \
